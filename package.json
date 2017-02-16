@@ -1,0 +1,44 @@
+{
+  "name": "xm-form-validator",
+  "version": "1.0.0",
+  "description": "xm form validator",
+  "author": "ximing",
+  "scripts": {
+    "test": "ava",
+    "dev": "NODE_ENV=development ./node_modules/.bin/gulp dev",
+    "build": "NODE_ENV=production ./node_modules/.bin/gulp --gulpfile ./gulpfile.build.js build"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "ava": "^0.18.1",
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-2": "^6.18.0",
+    "babel-runtime": "^6.20.0",
+    "nyc": "^10.1.2"
+  },
+  "engines": {
+    "node": ">= 5.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "ava": {
+    "files": [
+      "test/*.js"
+    ],
+    "source": [
+      "src/**/*.{js,jsx}"
+    ],
+    "concurrency": 5,
+    "failFast": true,
+    "tap": true,
+    "powerAssert": false,
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  }
+}

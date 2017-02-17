@@ -27,5 +27,5 @@ test('require:emptyString undefined', t => {
 });
 
 test('require:emptyString 8077@qq.com', t => {
-    t.is(loader.verify('8077@qq.com',[{require:true,msg:'test'},{email:true}]),true);
+    t.is(loader.verify('8077@qq.com',[{require:true,msg:'require'},{email:true}]),true);
 });

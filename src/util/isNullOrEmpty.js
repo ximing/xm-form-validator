@@ -2,7 +2,7 @@
  * Created by yeanzhi on 17/2/17.
  */
 'use strict';
-export default function isNullOrEmpty(){
+export default function isNullOrEmpty(thing){
 
     // Check for undefined, null and NaN
     if (typeof thing === "undefined" || thing === null ||

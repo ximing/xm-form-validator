@@ -20,9 +20,12 @@ export default {
                 if (i !== 'message' || i != 'msg') {
                     if (__schemas[i]) {
                         if(item[i]){
-                            let _res = __schemas[i](value);
+                            let _res = __schemas[i](value,item[i]);
                             if (!_res) {
                                 res = item['message'] || item['msg'] || errorMessage[i] || errorMessage['default'];
+                                if(!isString(res)){
+                                    res= res(item[i])
+                                }
                             }
                             return _res
                         }else{

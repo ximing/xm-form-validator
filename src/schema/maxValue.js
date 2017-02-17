@@ -5,12 +5,13 @@
 import {isNumber,isArray} from '../util';
 import warning from '../warning';
 
-export default function (value,minValue) {
+export default function (value,maxValue) {
     if(isArray(value)){
-        return value.length < minValue;
+        return value.length <= maxValue;
     }else if(isNumber(value)){
-        return value < minValue;
+        return value <= maxValue;
     }else{
-        warning(true,'minValue类型错误')
+        warning(true,'maxValue类型错误')
+        return false;
     }
 }

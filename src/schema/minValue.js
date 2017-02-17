@@ -7,10 +7,11 @@ import warning from '../warning';
 
 export default function (value,minValue) {
     if(isArray(value)){
-        return value.length > minValue;
+        return value.length >= minValue;
     }else if(isNumber(value)){
-        return value > minValue;
+        return value >= minValue;
     }else{
         warning(true,'minValue类型错误')
+        return false;
     }
 }

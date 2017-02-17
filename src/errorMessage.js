@@ -14,6 +14,5 @@ export default {
     int:"请输入合法整数",
     email:"请输入合法email",
     phone:"请输入合法手机号",
-    regular:"请输入合法正则表达式",
     "default":"输入值不合法"
 }

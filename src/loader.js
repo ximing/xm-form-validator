@@ -19,13 +19,17 @@ export default {
             Object.keys(item).every(i => {
                 if (i !== 'message' || i != 'msg') {
                     if (__schemas[i]) {
-                        let _res = __schemas[i](value);
-                        if (!_res) {
-                            res = item['message'] || item['msg'] || errorMessage[i] || errorMessage['default'];
+                        if(item[i]){
+                            let _res = __schemas[i](value);
+                            if (!_res) {
+                                res = item['message'] || item['msg'] || errorMessage[i] || errorMessage['default'];
+                            }
+                            return _res
+                        }else{
+                            return true;
                         }
-                        return _res
                     } else {
-                        return false
+                        return false;
                     }
                 }
             });

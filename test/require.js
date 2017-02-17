@@ -22,3 +22,10 @@ test('require:emptyString tap', t => {
 test('require:emptyString undefined', t => {
     t.is(loader.verify(undefined,{require:true}),errorMessage.require);
 });
+test('require:emptyString undefined', t => {
+    t.is(loader.verify(undefined,{require:false}),true);
+});
+
+test('require:emptyString 8077@qq.com', t => {
+    t.is(loader.verify('8077@qq.com',[{require:true,msg:'test'},{email:true}]),true);
+});

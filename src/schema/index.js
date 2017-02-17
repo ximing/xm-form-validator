@@ -1,4 +1,5 @@
-import email from 'email.js';
+import email from './email.js';
+
 export default {
-    email
+    email:email
 }

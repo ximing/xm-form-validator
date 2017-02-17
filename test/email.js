@@ -3,11 +3,11 @@
  */
 'use strict';
 import test from 'ava';
+import loader from '../src/loader';
+
 test('email test', t => {
     t.pass();
 });
-test('bar', async t => {
-    const bar = Promise.resolve('bar');
-
-    t.is(await bar, 'bar');
+test('email:123456@qq.com', t => {
+    t.is(loader.verify('807754634@qq.com',{email:true}),true);
 });
